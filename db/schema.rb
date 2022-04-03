@@ -401,6 +401,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_02_201247) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "phone_number", default: ""
+    t.boolean "sms_notifications", default: false
     t.index ["casa_org_id"], name: "index_users_on_casa_org_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
@@ -411,7 +412,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_02_201247) do
   end
 
   create_table "versions", force: :cascade do |t|
-    t.string "item_type", null: false
+    t.string "item_type"
+    t.string "{:null=>false}"
     t.bigint "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
