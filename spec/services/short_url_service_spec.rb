@@ -6,7 +6,7 @@ RSpec.describe ShortUrlService do
   let!(:notification_object) { ShortUrlService.new }
   let!(:short_io_domain) { Rails.application.credentials[:SHORT_IO_DOMAIN] }
 
-  describe "short.io API is cool" do
+  describe "short.io API is cool " do
     before :each do
       WebMockHelper.short_io_stub
       WebMock.disable_net_connect!
